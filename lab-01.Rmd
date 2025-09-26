@@ -274,7 +274,27 @@ _Within each of the 4 nations, what is the proportion of tourist attractions tha
 
 ```{r Ex_m}
 # Write your code here
+free_counts <- visitors_with_nations %>% filter(admission == "Free") %>% count(nation)
 
+nations_with_counts <- visitors_with_nations %>% count(nation) %>%
+                        mutate(
+                          n_free = case_when(
+                            nation == "Wales" ~ 0,
+                            nation == "England" ~ free_counts$n[1],
+                            nation == "Northern Ireland" ~ free_counts$n[2],
+                            nation == "Scotland" ~ free_counts$n[3]
+                          )
+                        )
+
+nations_with_counts %>%
+  mutate(
+    ratio_free = case_when(
+      nation == "Wales" ~ 0,
+      nation == "England" ~ n_free[1]/n[1],
+      nation == "Northern Ireland" ~ n_free[2]/n[2],
+      nation == "Scotland" ~ n_free[3]/n[3]
+    )
+  ) %>% select(nation,ratio_free)
 
 ```
 
