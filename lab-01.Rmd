@@ -227,7 +227,7 @@ visitors %>%
 
 _Observe in question 6 that the mean statistics across all settings are much larger than the corresponding median statistics. Discuss in your group what this suggests about the data._
 
-**Write your answer here**
+**it suggests that the data is skewed towards larger values, as in there are a few large values and a lot of smaller ones. the averages of the few larger values contribute more to the mean and contribute little to nothing to the median.**
 
 
 
