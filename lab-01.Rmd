@@ -183,11 +183,11 @@ visitors %>%
 _Perform the same calculation for the 2021 admissions data._
 
 ```{r Ex_h}
-#visitors %>% 
-#  ______(
-#    __________,
-#    __________
-#  )
+visitors %>% 
+  summarise(
+    mean_2021 = mean(n_2021, na.rm = TRUE),
+    med_2021 = median(n_2021, na.rm = TRUE)
+  )
 ```
 
 All values in the output are `NA`!
@@ -196,7 +196,7 @@ All values in the output are `NA`!
 
 _What does `NA` stand for and why are you getting this as your answer to the previous question._
 
-**Write your answer here**
+**Not Applicable, as the values for n_2021 aren't filled in for some attractions so the mean and median functions cant perform their calculations properly**
 
 
 
@@ -205,7 +205,7 @@ _What does `NA` stand for and why are you getting this as your answer to the pre
 
 _Look at the help pages for the `mean()` and `median()` commands to see what the input argument `na.rm` does. Edit your code from exercise h so that it computes the summary statistics where data is available._
 
-**Write your answer here**
+**na.rm = TRUE means that the NA values get removed before calculations are performed **
 
 
 
